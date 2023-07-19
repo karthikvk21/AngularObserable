@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="card">
+        <form [formGroup]="Employeefrom" (ngSubmit)="addEmployee()" class="row g-3">
+            <div class="col-md-6">
+                <label for="validationDefault01" class="form-label">First name</label>
+                <input type="text" class="form-control" formControlName="fname" id="validationDefault01" required>
+            </div>
+            <div class="col-md-6">
+                <label for="validationDefault02" class="form-label">Last name</label>
+                <input type="text" class="form-control" formControlName="lname" id="validationDefault02" required>
+            </div>
+            <div class="col-md-6">
+                <label for="validationDefault01" class="form-label">Email</label>
+                <input type="email" class="form-control" formControlName="email" id="validationDefault01" required>
+            </div>
+            <div class="col-md-6">
+                <label for="validationDefault02" class="form-label">Password</label>
+                <input type="password" class="form-control" formControlName="password" id="validationDefault02"
+                    required>
+            </div>
+            <div class="col-md-6">
+                <label for="validationDefault01" class="form-label">Employee ID</label>
+                <input type="text" class="form-control" formControlName="eid" id="validationDefault01" required>
+            </div>
+            <div class="col-md-6">
+                <label for="validationDefault02" class="form-label">Mobile number</label>
+                <input type="text" class="form-control" formControlName="mobile" id="validationDefault02" required>
+            </div>
+            <div class="col-12">
+                <button class="btn" [disabled]="Employeefrom.invalid" type="submit">REGISTER</button>
+            </div>
+            <div *ngIf="registrationStatus" >
+                <p class="success">{{ registrationStatus }}</p>
+            </div>
+        </form>
+    </div>
+</div>

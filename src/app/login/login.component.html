@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="card">
+        <div class="container image-container mt-3 mb-5">
+            <img class="home-image" src="assets/images/Levi's_logo.svg.png" alt="">
+        </div>
+        <form [formGroup]="loginform" (ngSubmit)="Login()">
+            <div>
+                <label class="form-label">Username</label>
+                <input type="text" formControlName="uname" class="form-control">
+            </div>
+            <div>
+                <label class="form-label">Password</label>
+                <input type="password" formControlName="password" class="form-control">
+            </div>
+            <div class="button">
+                <button class="btn" type="submit" [disabled]="loginform.invalid">LOG IN</button>
+            </div>
+        </form>
+    </div>
+</div>
